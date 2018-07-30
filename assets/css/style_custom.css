@@ -1,7 +1,7 @@
 
-h1,h2,h3,h4,h5,h6{
+/* h1,h2,h3,h4,h5,h6{
 font-family: 'Jura', sans-serif;
-}
+} */
 p{
     font-family: 'Poppins', sans-serif; 
 }
@@ -10,6 +10,14 @@ body, html {
     /* font-family: 'Poppins-Regular', sans-serif; */
     /* overflow-x: hidden; */
 }
+h1,h2{
+    font-family: 'Jura', sans-serif;
+    color:#51627C;
+    }
+    h3,h4,h5,h6{
+        font-family: 'Jura', sans-serif;
+        color:	#585858;
+    }
 
 /* header page */
 /* .navbar{
