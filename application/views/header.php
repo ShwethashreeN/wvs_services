@@ -83,11 +83,18 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
          <li><a href="<?php echo base_url(); ?>" >HOME</a></li> 
-         <li><a href="<?php echo base_url(); ?>index.php/customer/cust_register" >SIGN UP</a></li> 
-        <li style="margin-left:-20px;margin-right:5px;"><a href="<?php echo base_url(); ?>index.php/customer/cust_login" >LOGIN</a></li>
-    
-        <li><?php echo $this->session->userdata('user'); ?></li> 
-        
+<?php
+$logindata = $this->session->userdata('user');
+
+if(isset($logindata)){
+    echo $logindata;
+}
+else {
+    echo' <li><a href='."<?php echo base_url(); ?>index.php/customer/cust_register".' >SIGN UP</a></li> 
+    <li style="margin-left:-20px;margin-right:5px;"><a href="http://localhost/wvs_services/index.php/customer/cust_login" >LOGIN</a></li>';
+} 
+
+        ?>
       </ul>
     </div>
   </div>
