@@ -13,14 +13,22 @@ class Home extends CI_Controller {
 	}
     public function index()
 	{   
-        $this->load->view('header');
+        // $this->load->view('header');
+		// $this->load->view('home');
+		// $this->load->view('footer');
+		// $this->displayHome();
+		redirect('displayHome');
+	}
+
+	public function displayHome()
+	{
+		$this->load->view('header');
 		$this->load->view('home');
 		$this->load->view('footer');
 	}
 	public function getservices()
 	{ 
-		$service_id=$this->input->get('service_id');
-            
+		$service_id=$this->input->get('service_id');    
 		$data['data']= $this->a->list_service_providers($service_id);
 		$this->load->view('header');
 		$this->load->view('list_service_providers',$data);

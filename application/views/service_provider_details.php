@@ -27,7 +27,7 @@
                         }
                        
                         else{
-                          echo "<a href='customer/customer_register' style='float:right;color:#51627C;'>Book Now</a><br>";
+                          echo "<a href='../customer/cust_register' style='float:right;color:#51627C;'>Book Now</a><br>";
                         }
                         
 

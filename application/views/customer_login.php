@@ -151,25 +151,12 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
 });
 </script>
 <div class="container">
-    <h2> Register here</h2>
+    <h2> Login here</h2>
         <hr class="line_hr"><br><br>
             <div class="row" >
                 <div class="col-md-5">
-                    <form method="post">
-                        <div class="from-cotrol">
-                            <div class="form-group">
-                            <div class="group">
-                                <input type="text" 
-                                    class="inputline" 
-                                    id="name"    
-                                    name="name"
-                                    required>
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <p id="navlabel">Full Name</p>
-                            </div>   
-                            </div>
-                        </div>
+                    <form method="post" action="">
+                       
 
                         <div class="from-cotrol">
                             <div class="form-group">
@@ -189,21 +176,6 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
                         <div class="from-cotrol">
                             <div class="form-group">
                             <div class="group">
-                                <input type="text" 
-                                    class="inputline" 
-                                    id="phone"    
-                                    name="phone"
-                                    required>
-                                    <span class="highlight"></span>
-                                    <span class="bar"></span>
-                                    <p id="navlabel">Phone</p>
-                            </div>   
-                            </div>
-                        </div>
-
-                        <div class="from-cotrol">
-                            <div class="form-group">
-                            <div class="group">
                                 <input type="password" 
                                     class="inputline" 
                                     id="pwd"    
@@ -216,8 +188,16 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
                             </div>
                         </div>
 
-                        <input type="submit" name="signup" class="btn btn-primary" value ="Register" style="float:right;margin-top:40px;"/>
-                    </form>
+                        <input type="submit" name="login" class="btn btn-primary" value="Login" style="float:right;margin-top:40px;" />
+						<?php
+						if($this->session->flashdata('error')){
+					?>
+					<div class="alert alert-danger text-center" style="margin-top:20px;">
+						<?php echo $this->session->flashdata('error'); ?>
+					</div>
+					<?php
+				} ?>
+					</form>
                 </div>
        
       
