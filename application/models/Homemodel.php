@@ -13,6 +13,9 @@ class Homemodel extends CI_Model {
         {  
             $query = $this->db->get('wvs_services');  
             return $query->result();  
+            
+            // $query = $this->db->query("select * from wvs_services where ");
+            // return $query->result_array();
         }  
         function fetchcourses()  
         {  
