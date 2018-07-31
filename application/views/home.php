@@ -1,14 +1,14 @@
 <style>
-    .container{
-        margin-left:50px;
-        margin-top:20px;
-    }
-    h1,h2{
-font-family: 'Jura', sans-serif;
+.container{
+    margin-left:50px;
+    margin-top:20px;
+}
+h1,h2{
+font-family: 'Palanquin Dark', sans-serif;
 color:#51627C;
 }
 h3,h4,h5,h6{
-    font-family: 'Jura', sans-serif;
+    font-family: 'Palanquin Dark', sans-serif;
     color:	#585858;
 }
 .col-md-3{
@@ -16,6 +16,9 @@ h3,h4,h5,h6{
 }
 .col-md-3 a{
     text-decoration:none;
+}
+p{
+  font-family: 'Quicksand', sans-serif;
 }
 .services_display{
 word-wrap:break-word;
@@ -31,11 +34,15 @@ width:290px;
 
 </style>
 
-<div class="container-fluid" style="padding:0px;margin-top:50px;">
- <div>   
-    <img src="assets/images/img2.jpeg" height="500px" width="100%">
-</div>
-</div>
+<div class="container-fluid" style="padding:0px;margin-top:50px;background-color:black;"> 
+    <img src="assets/images/img2.jpeg" height="500px" width="100%" style="position:relative;opacity:0.4;">
+  <div style="position:absolute;bottom:250px;left:120px;border:5px solid #fff;padding:50px;letter-spacing:2px;">
+    <h1 style="color:#fff;font-size:60px;">Your Service At Your Door Step</h1>
+    <p style="color:white;font-size:30px;margin-left:150px;letter-spacing:4px;"><em>Serving You Is What We Love To !!!</em></p>
+  </div>  
+  </div>
+
+
 
 <div class="container">  
     <!-- <h2>OUR-STUDIO</h2> 
