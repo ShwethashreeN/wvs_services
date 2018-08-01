@@ -48,7 +48,7 @@ $datePicker.datepicker({
 
 </style>
 <div class="container">
-<h2> Service Provider Details</h2>
+<h2> Course Provider Details</h2>
 <hr class="line_hr"><br><br>
 <div class="row" >
 <div id="datepicker">
@@ -62,10 +62,11 @@ $datePicker.datepicker({
               <form method='post'>
                <div class='col-md-3 services_display'>
                <div class='caption'>
-                        <p><b>Details</b> : $row->sp_details.</p>
-                        <p><b>Price </b>: $row->sp_price .</p>
-                        <p><b>Date slot </b>: $row->sp_date_slot.</p>
-                        <p><b>Time slot</b> : $row->sp_time_slot.</p>
+                        <p><b>About</b> : $row->cp_about.</p>
+                        <p><b>Details</b> : $row->cp_about.</p>
+                        <p><b>Price </b>: $row->cp_price .</p>
+                        <p><b>Date slot </b>: $row->cp_date_slot.</p>
+                        <p><b>Time slot</b> : $row->cp_time_slot.</p>
                        
                        <input type='text' id='datep' />
                        <div id='datepicker'>

@@ -70,7 +70,7 @@ width:290px;
               echo "
               <div class='col-md-3 services_display'>
                <div class='thumbnail'>
-              <a href='getservices?service_id=$row->service_id'>
+              <a href='serviceproviders/getservices?service_id=$row->service_id'>
                 <img src='$row->service_image' alt='No image' style='width:100%;height:180px;'>
               </a>
               <div class='caption'>
@@ -96,13 +96,13 @@ width:290px;
               echo "
               <div class='col-md-3 services_display'>
                <div class='thumbnail'>
-              <a href='list_service_providers?id=$row->course_id'>
+              <a href='serviceproviders/getcourses?course_id=$row->course_id'>
                 <img src='$row->course_image' alt='No image' style='width:100%;height:180px;'>
               </a>
               <div class='caption'>
                   <p>$row->course_name .</p>
                   <p>$row->course_desc .</p>
-                  <a href='list_service_providers?id=$row->course_id' style='float:right;color:#51627C;'>Book Now</a><br>
+                  <a href='serviceproviders/getcourses?course_id=$row->course_id' style='float:right;color:#51627C;'>Book Now</a><br>
               </div>
               </div>
               </div>";

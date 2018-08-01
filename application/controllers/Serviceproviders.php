@@ -31,6 +31,26 @@ class Serviceproviders extends CI_Controller {
             // $this->set_flashdata('error', 'No service providers found');
 		}
 	}
+
+	public function getcourses()
+	{   
+		$course_id=$this->input->get('course_id');
+		$data['data']  = $this->b->list_course_providers($course_id);
+		$dataS  = $this->b->list_course_providers($course_id);
+		if($dataS){
+		$this->load->view('header');
+		$this->load->view('list_course_providers',$data);
+		$this->load->view('footer');
+		}
+		else{
+			header('location:' . base_url() );
+            // $this->set_flashdata('error', 'No service providers found');
+		}
+	}
+
+
+
+
 	public function serviceprovider_details(){
 		$sp_id=$this->input->get('sp_id');
 		$data['data']  = $this->b->serviceprovider_details($sp_id);
@@ -38,6 +58,14 @@ class Serviceproviders extends CI_Controller {
 		$this->load->view('service_provider_details',$data);
 		$this->load->view('footer');
 
+	}
+
+	public function courseprovider_details(){
+		$cp_id=$this->input->get('cp_id');
+		$data['data']  = $this->b->courseprovider_details($cp_id);
+		$this->load->view('header');
+		$this->load->view('course_provider_details',$data);
+		$this->load->view('footer');
 	}
 }
 ?>
