@@ -59,5 +59,10 @@ class Customer extends CI_Controller {
 			}
 		}
 	}
+	public function cust_logout()  
+    {  
+        $this->session->sess_destroy();  
+		header('location:' . base_url() );
+    } 
 }
 ?>

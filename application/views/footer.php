@@ -1,20 +1,18 @@
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Wvs Schedular</title>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="icon" type="image/png" href="assets/images/icons/favicon.ico"/>
-<link href="https://fonts.googleapis.com/css?family=Jura|Poppins" rel="stylesheet">
-   
- <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style_custom.css"> 
-
-  
-</head> -->
+<style>
+footer {
+      background-color: #515F7C;
+      color: white;
+      padding:1px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  .text-center a:hover {
+      color: #000 !important;
+      text-decoration: none;
+  }  
+</style>
 
 <script>
 $(document).ready(function(){
@@ -47,7 +45,7 @@ $(document).ready(function(){
 })
 </script>
 
-<div class="footer">
+<!-- <div class="footer">
    
 <div class="row">
     <div class="col-md-4">
@@ -57,7 +55,7 @@ $(document).ready(function(){
      <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
          <span class="glyphicon glyphicon-chevron-up"></span>
      </a>
-         <a style="font-family:'Jura', sans-serif;">Powered by © 2018 World Vision Softek</a>
+        <p style="color:white;"> Powered by © 2018 <a>World Vision Softek</a></p>
      </div>
 
      <div class="col-md-4">
@@ -67,7 +65,14 @@ $(document).ready(function(){
 
 
 </div>
-</div>
+</div> -->
+
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p>Powered by <a href="https://www.wvsoftek.com">World Vision Softek</a></p> 
+</footer>
 
 </body>
 </html>

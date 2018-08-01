@@ -4,6 +4,13 @@
     margin-top:100px;
     /* margin-bottom:150px; */
 }
+img{
+    border-radius:50%;
+}
+img:hover{
+    border:10px solid #f1f1f1;
+    /* box-shadow:0px 5px 10px 0px #888888; */
+}
 </style>
 <div class="container">
 <h2>Available Service Providers</h2>
@@ -14,24 +21,14 @@
              {
                 
               echo "
-              <div class='col-md-3 services_display'>
-               <form>
-              <div class='caption'>
-                  <p>$row->sp_name .</p>
+              <div class='col-md-3' style='padding:40px;box-shadow:0px 5px 10px 0px #888888;margin-right:40px;'>
+                 <img src='../assets/images/img_avatar.png' alt='no image' style='width:150px;margin-left:20px;'>
+                  <h3>$row->sp_name .</h3>
                   <p>$row->sp_desc .</p>
                   <p>$row->sp_address .</p>
                   <p>$row->sp_email .</p>
-                  <p>$row->sp_phone .</p>
-                  <img src='$row->sp_image'>
-                
-                 
-                 
-                  <a href='serviceprovider_details?sp_id=$row->sp_id' style='float:right;color:#51627C;'>Book Now</a><br>
-                 
-                    
-  
-              </div>
-             </form>
+                  <p>$row->sp_phone .</p><br>
+                  <a href='serviceprovider_details?sp_id=$row->sp_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
               </div>";
 
 

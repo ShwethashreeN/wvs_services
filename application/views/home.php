@@ -1,25 +1,5 @@
 <style>
-.container{
-    margin-left:50px;
-    margin-top:20px;
-}
-h1,h2{
-font-family: 'Palanquin Dark', sans-serif;
-color:#51627C;
-}
-h3,h4,h5,h6{
-    font-family: 'Palanquin Dark', sans-serif;
-    color:	#585858;
-}
-.col-md-3{
-    padding-top:20px;
-}
-.col-md-3 a{
-    text-decoration:none;
-}
-p{
-  font-family: 'Quicksand', sans-serif;
-}
+
 .services_display{
 word-wrap:break-word;
 width:290px;
@@ -29,9 +9,20 @@ width:290px;
   height:250px;
 }
 
+.serv_image{
+  transition: transform .2s;
+  background-color:#f7f7f7 !important;
+}
+.serv_image:hover{
+  -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(0.9); 
+}
 
-
-
+/* .thumbnail:hover{
+  transform: scale(1.1);
+  box-shadow:0px 5px 10px 0px #888888;
+} */
 </style>
 
 <div class="container-fluid" style="padding:0px;margin-top:50px;background-color:black;"> 
@@ -76,14 +67,14 @@ width:290px;
                 
               echo "
               <div class='col-md-3 services_display'>
-               <div class='thumbnail'>
-              <a href='getservices?service_id=$row->service_id'>
-                <img src='$row->service_image' alt='No image' style='width:100%;height:180px;'>
+               <div class='thumbnail' style='transition: transform .2s;box-shadow:0px 5px 10px 0px #888888;'>
+              <a href='serviceproviders/getservices?service_id=$row->service_id'>
+                <img src='$row->service_image' alt='No image' class='serv_image' style='width:100%;height:180px;'>
               </a>
               <div class='caption'>
                   <p>$row->service_name .</p>
-                  <p>$row->service_desc .</p>
-                  <a href='serviceproviders/getservices?service_id=$row->service_id' style='float:right;color:#51627C;'>Book Now</a><br>
+                  <p>$row->service_desc .</p><br>
+                  <a href='serviceproviders/getservices?service_id=$row->service_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
               </div>
               </div>
               </div>";
@@ -102,14 +93,14 @@ width:290px;
                 
               echo "
               <div class='col-md-3 services_display'>
-               <div class='thumbnail'>
+               <div class='thumbnail' style='box-shadow:0px 5px 10px 0px #888888;'>
               <a href='list_service_providers?id=$row->course_id'>
-                <img src='$row->course_image' alt='No image' style='width:100%;height:180px;'>
+                <img src='$row->course_image' alt='No image' class='serv_image' style='width:100%;height:180px;'>
               </a>
               <div class='caption'>
                   <p>$row->course_name .</p>
-                  <p>$row->course_desc .</p>
-                  <a href='list_service_providers?id=$row->course_id' style='float:right;color:#51627C;'>Book Now</a><br>
+                  <p>$row->course_desc .</p><br>
+                  <a href='list_service_providers?id=$row->course_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
               </div>
               </div>
               </div>";
