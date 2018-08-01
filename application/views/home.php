@@ -14,11 +14,13 @@ width:290px;
   background-color:#f7f7f7 !important;
 }
 .serv_image:hover{
-  -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
+  -ms-transform: scale(0.9); /* IE 9 */
+    -webkit-transform: scale(0.9); /* Safari 3-8 */
     transform: scale(0.9); 
 }
-
+.thumbnail{
+  box-shadow:0px 5px 5px 0px #888888;
+}
 /* .thumbnail:hover{
   transform: scale(1.1);
   box-shadow:0px 5px 10px 0px #888888;
@@ -67,9 +69,9 @@ width:290px;
                 
               echo "
               <div class='col-md-3 services_display'>
-               <div class='thumbnail' style='transition: transform .2s;box-shadow:0px 5px 10px 0px #888888;'>
+               <div class='thumbnail'>
               <a href='serviceproviders/getservices?service_id=$row->service_id'>
-                <img src='$row->service_image' alt='No image' class='serv_image' style='width:100%;height:180px;'>
+                <img src='$row->service_image' alt='No image' class='serv_image' style='height:180px;width:100%;'>
               </a>
               <div class='caption'>
                   <p>$row->service_name .</p>
@@ -93,14 +95,14 @@ width:290px;
                 
               echo "
               <div class='col-md-3 services_display'>
-               <div class='thumbnail' style='box-shadow:0px 5px 10px 0px #888888;'>
-              <a href='list_service_providers?id=$row->course_id'>
-                <img src='$row->course_image' alt='No image' class='serv_image' style='width:100%;height:180px;'>
+               <div class='thumbnail'>
+              <a href='serviceproviders/getcourses?course_id=$row->course_id'>
+                <img src='$row->course_image' alt='No image' style='width:100%;height:180px;'>
               </a>
               <div class='caption'>
                   <p>$row->course_name .</p>
-                  <p>$row->course_desc .</p><br>
-                  <a href='list_service_providers?id=$row->course_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
+                  <p>$row->course_desc .</p>
+                  <a href='serviceproviders/getcourses?course_id=$row->course_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
               </div>
               </div>
               </div>";

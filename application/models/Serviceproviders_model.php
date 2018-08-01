@@ -25,11 +25,21 @@ class Serviceproviders_model extends CI_Model {
             return $query->result(); 
         }
 
-        function list_course_providers()  
+        function list_course_providers($course_id)  
         {  
-            $query = $this->db->get('wvs_course_providers');  
-            return $query->result();  
+            // $query = $this->db->get('wvs_service_providers');  
+            // return $query->result();  
+            $this->db->where('course_id', $course_id);
+            $query=$this->db->get('wvs_course_providers');
+            return $query->result();
         }  
+
+        function courseprovider_details($cp_id)
+        {
+            $this->db->where('cp_id', $cp_id);
+            $query=$this->db->get('wvs_course_providers_details');
+            return $query->result(); 
+        }
        
 }  
 ?>  

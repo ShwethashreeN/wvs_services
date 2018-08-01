@@ -7,45 +7,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="<?php echo base_url();?>assets/css/style_custom.css"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="icon" type="image/png" href="assets/images/icons/favicon.ico"/>
-  <link href="https://fonts.googleapis.com/css?family=Palanquin+Dark|Quicksand" rel="stylesheet"> 
-
-<style> 
-
+  <link href="https://fonts.googleapis.com/css?family=Palanquin|Quicksand" rel="stylesheet">
+ 
+ <style>
 body{
-  font-family: 'Quicksand', sans-serif;
-  font-size:15px;
-  margin:0px !important;
+    font-family: 'Quicksand', sans-serif;
+    font-size:15px;
 }
-.container{
-    margin-left:50px;
-    margin-top:20px;
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Palanquin', sans-serif;
 }
 h1,h2{
-font-family: 'Palanquin Dark', sans-serif;
-color:#51627C;
-}
-h3,h4,h5,h6{
-    font-family: 'Palanquin Dark', sans-serif;
-    color:	#585858;
-}
-.col-md-3{
-    padding-top:20px;
-}
-.col-md-3 a{
-    text-decoration:none;
-}
-p{
-  font-family: 'Quicksand', sans-serif;
+    color:#515F7C;
+    font-weight:bold;
 }
   .nav-tabs li a {
       color: #777;
   }
   
   .navbar {
-      font-family: 'Palanquin Dark', sans-serif;
+      font-family: 'Palanquin', sans-serif;
       margin-bottom: 0;
       background-color: #51627C;
       height:70px;
@@ -96,9 +81,8 @@ p{
     margin-top:-44px;
   }
   </style>
+
 </head>
-
-
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50" style="overflow-x:hidden;">
 
 <nav class="navbar navbar-default navbar-fixed-top">
