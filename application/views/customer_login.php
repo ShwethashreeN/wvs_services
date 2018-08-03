@@ -1,12 +1,54 @@
 <style>
-.container{
-    margin-top:120px;
-    /* margin-bottom:150px; */
+.background{
+	background:url('/wvs_services/assets/images/background1.jpg')no-repeat;
+	background-size:cover;
+	height:auto;
+	width:100%;
+	padding-bottom:50px;
+}
+
+.loginwrapper{
+	width:28%;
+	padding:30px;
+	margin-top:180px;
+	height:400px;
+	border-radius:20px;
+	background-color:silver;
+	opacity:0.9;
+	margin-bottom:60px;
+	box-shadow:0px 5px 5px 0px #888888;
+}
+
+.box-icon{
+  border:2px solid white; 
+  height:100px;
+  width:100px;
+  margin:0 auto;
+  border-radius:50% 50% 50% 50%;
+  text-align:center;
+  margin-bottom:35px;
+  transform:rotate(0deg) scale(1) skew(0) translateX(0) translateY(0px);
+  background-color:#515F7C;margin-top:-60px;
+}
+
+.service_icon{
+height:74px;
+width:74px;
+color:white;
+line-height:70px;
+position:absolute;
+left:50%;
+top:50%;
+transform:translateX(-50%) translateY(-50%);z-index:1;
+transition:all .3s ease-out;
+font-size:30px;
+display:inline-block;
+
 }
 .group { 
 		position: relative; 
-		margin-bottom: 20px; 
-	}
+		margin-bottom: 30px; 
+}
 	
 	.inputline {
 		font-size: 14px;
@@ -18,7 +60,8 @@
 		width: 100%;
 		border: none;
 		border-radius: 0;
-		border-bottom: 1px solid #757575;
+		border-bottom: 1px solid #5A637C;
+		
 	}
 	
 	.inputline:focus { outline: none; }
@@ -41,10 +84,11 @@
 	/* active */
 	
 	.inputline:focus ~ #navlabel, .inputline.used ~ #navlabel {
-		top: -20px;
+		top: -30px;
 	  transform: scale(.75); left: -2px;
-		/* font-size: 14px; */
-		color: brown;
+		font-size: 22px;
+		color: white;
+		
 	}
 	
 	
@@ -60,9 +104,9 @@
 		content: '';
 		height: 2px; 
 		width: 0;
-		bottom: 1px; 
+		bottom: 2px; 
 		position: absolute;
-		background: brown; 
+		background: #5A637C; 
 		transition: all 0.2s ease;
 	}
 	
@@ -113,6 +157,7 @@
         background-color:brown !important;
     }
 </style>
+
 <script>
    $(window, document, undefined).ready(function() {
 
@@ -150,16 +195,20 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
 
 });
 </script>
-<div class="container">
-    <h2> Login here</h2>
-        <hr class="line_hr"><br><br>
-            <div class="row" >
-                <div class="col-md-5">
-                    <form method="post" action="">
-                       
 
-                        <div class="from-cotrol">
-                            <div class="form-group">
+<div class="background">
+            <div class="row">
+			<div class="col-md-4"></div>
+			
+            <div class="col-md-4 loginwrapper">
+
+			<div>
+			<div class="box-icon">
+                <a href=""><span class="glyphicon glyphicon-user service_icon"></span></a>
+        	</div>
+				<h3 style="text-align:center;color:white;font-size:30px;margin-top:-20px;"> Sign In</h3><br><br>
+        		
+                    <form method="post" action="">
                             <div class="group">
                                 <input type="email" 
                                     class="inputline" 
@@ -170,11 +219,8 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
                                     <span class="bar"></span>
                                     <p id="navlabel">Email</p>
                             </div>   
-                            </div>
-                        </div>
+                         
 
-                        <div class="from-cotrol">
-                            <div class="form-group">
                             <div class="group">
                                 <input type="password" 
                                     class="inputline" 
@@ -184,11 +230,11 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
                                     <span class="highlight"></span>
                                     <span class="bar"></span>
                                     <p id="navlabel">Password</p>
+									<p ><a style="float:right;color:#515F7C;" href="">Forgot Password ?</a></p>
                             </div>   
-                            </div>
-                        </div>
-
-                        <input type="submit" name="login" class="btn btn-primary" value="Login" style="float:right;margin-top:40px;" />
+                        
+					
+                        <input type="submit" name="login" class="btn btn-default" value="Login" style="margin-top:20px;width:100%;" />
 						<?php
 						if($this->session->flashdata('error')){
 					?>
@@ -198,10 +244,15 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
 					<?php
 				} ?>
 					</form>
-                </div>
-       
+                </div><br><br>
+
+
+				<hr style="border-bottom:1px solid #515F7C;">
+				<h4 style="text-align:center;">Don't have an account ? <a href="http://localhost/wvs_services/index.php/customer/cust_register">Register Now</a><h4>
+				</div>
+				<div class="col-md-4"></div>
       
     
-             </div>
+             </div> 
 
-</div><br><br><br><br><br><br><br>
+</div>

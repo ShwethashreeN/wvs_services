@@ -101,7 +101,7 @@ width:290px;
               </a>
               <div class='caption'>
                   <p>$row->course_name .</p>
-                  <p>$row->course_desc .</p>
+                  <p>$row->course_desc .</p><br>
                   <a href='serviceproviders/getcourses?course_id=$row->course_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
               </div>
               </div>
@@ -113,8 +113,7 @@ width:290px;
   </div>
    
   
-
-
+  
   <h2>Testimonials</h2>
   <hr class="line_hr"><br><br>
 

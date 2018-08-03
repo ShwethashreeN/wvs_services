@@ -67,7 +67,7 @@ h1,h2{
   background-color:brown !important;
   color:white !important;
   width:100%;
-  box-shadow:0px 5px 10px 0px #888888;
+  box-shadow:0px 5px 5px 0px #888888;
 }
 .btn{
   border-color:transparent !important;
