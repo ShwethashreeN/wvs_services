@@ -105,13 +105,14 @@
 		from { background: brown; }
 		to 	{ width: 0; background: transparent; }
     }
-    .btn-primary{
+    .btn-default{
         border:none !important;
         background-color:brown;
     }
-    .btn-primary a:hover{
-        background-color:brown !important;
-    }
+   
+	.btn a:hover{
+		background-color:none !important;
+	} 
 </style>
 <script>
    $(window, document, undefined).ready(function() {
@@ -188,7 +189,7 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
                             </div>
                         </div>
 
-                        <input type="submit" name="login" class="btn btn-primary" value="Login" style="float:right;margin-top:40px;" />
+                        <input type="submit" name="login" class="btn btn-default" value="Login" style="float:right;margin-top:40px;" />
 						<?php
 						if($this->session->flashdata('error')){
 					?>
@@ -199,9 +200,9 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
 				} ?>
 					</form>
                 </div>
-       
+              
       
     
-             </div>
-
-</div><br><br><br><br><br><br><br>
+             </div><br><br>
+			 <p>New Customer ?<a href="./cust_register">SignUp here</a></p>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>

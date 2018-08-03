@@ -216,12 +216,12 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
                             </div>
                         </div>
 
-                        <input type="submit" name="signup" class="btn btn-primary" value ="Register" style="float:right;margin-top:40px;"/>
+                        <input type="submit" name="signup" class="btn btn-default" value ="Register" style="float:right;margin-top:40px;"/>
                     </form>
                 </div>
        
       
     
-             </div>
-
-</div><br><br><br><br><br><br><br>
+             </div><br><br>
+             <p>Already Customer ?<a href="./cust_login">Login here</a></p>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>

@@ -53,6 +53,13 @@ class Customer extends CI_Controller {
 			   $this->session->set_userdata(array('user'=>$loginName));  
 
 				header('location:' . base_url() );
+				//redirect($_SERVER['HTTP_REFERER']);
+
+				//header('location:javascript://history.go(-1)');
+
+				
+				
+				
 			}else{
 			header('location:' . base_url() .'index.php/customer/cust_login');
             $this->session->set_flashdata('error', 'Invalid login. User not found');
