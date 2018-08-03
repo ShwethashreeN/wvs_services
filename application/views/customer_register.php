@@ -202,7 +202,7 @@ $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAni
 
 			<div>
 			<div class="box-icon">
-                <a href=""><span class="glyphicon glyphicon-user service_icon"></span></a>
+                <a href=""><span class="glyphicon glyphicon-pencil service_icon"></span></a>
         	</div>
 				<h3 style="text-align:center;color:white;font-size:30px;margin-top:-20px;"> Sign Up</h3><br><br>
         
