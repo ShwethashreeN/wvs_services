@@ -95,7 +95,7 @@ img:hover{
                </form>";
 
                echo "
-               <div class='col-md-4' style='margin-left:80px;'>
+               <div class='col-md-4' style='margin-left:50px;'>
                <div class='list-group'>
                <a href='#' class='list-group-item active'>
                  <h3 class='list-group-item-heading' style='text-align:center;'>Recommended For You</h3>
@@ -154,54 +154,50 @@ img:hover{
 
 
 
-// <script type="text/javascript">
-//  $(document).ready(function(){
-//  	$('#datepicker').on('change',function(){
+ <!-- <script type="text/javascript">
+ $(document).ready(function(){
+ 	$('#datepicker').on('change',function(){
 
-//  		var value=$(this).val();
-//     // var value = $('#datepicker').datepicker('getDate');
+ 		var value=$(this).val();
+    // var value = $('#datepicker').datepicker('getDate');
     
-//  		alert(value);
-//  		if(value=='')
-//  		{
-//  			$('#timeslot').prop('disabled',true);
-//  		}
-//  		else{
-//  			$('#timeslot').prop('disabled',false);
+ 		alert(value);
+ 		if(value=='')
+ 		{
+ 			$('#timeslot').prop('disabled',true);
+ 		}
+ 		else{
+ 			$('#timeslot').prop('disabled',false);
       
-//  			$.ajax({
-//  					url:"http://localhost/wvs_services/Serviceproviders/get_timeslot",
-//  					type:"POST",
-//            data:{'value':value},
-//  					// dataType:'json',
+ 			$.ajax({
+ 					url:"http://localhost/wvs_services/Serviceproviders/get_timeslot",
+ 					type:"POST",
+           data:{'value':value},
+ 					// dataType:'json',
          
-//  					success:function(data){
-//  						$('#timeslot').html(data);
-//  					},
-//  					error:function(){
-//  						alert(error);
-//  					}
+ 					success:function(data){
+ 						$('#timeslot').html(data);
+ 					},
+ 					error:function(){
+ 						alert(error);
+ 					}
 
-//  			});
+ 			});
       
-//  		}
+ 		}
 
-//  	});
-
-
-
-//  });
-
-//  </script>
+ 	});
 
 
 
+ });
 
-<div class='form-group'>
-      <label class='control-label'>Date Slot:</label>
-      <input type='text' id='date' class='input datepicker' placeholder='yyyy-mm-dd'
-       name='expected_date'/>
-</div>
+</script> -->
+
+
+
+
+
 <script>
           $(document).ready(function(){
               $("#date").change(function(){

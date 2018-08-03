@@ -115,7 +115,7 @@ img:hover{
                
                </form>";
                echo "
-               <div class='col-md-4' style='margin-left:80px;'>
+               <div class='col-md-4' style='margin-left:50px;'>
                <div class='list-group'>
                <a href='#' class='list-group-item active'>
                  <h3 class='list-group-item-heading' style='text-align:center;'>Recommended For You</h3>
