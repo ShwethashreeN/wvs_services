@@ -67,5 +67,28 @@ class Serviceproviders extends CI_Controller {
 		$this->load->view('course_provider_details',$data);
 		$this->load->view('footer');
 	}
+
+	public function get_timeslot(){
+		
+		//echo "<script>alert('hi')</script>";
+		$value=$this->input->post('date');
+		echo "<script>alert($value);</script>";
+	// 	$value=$this->input->post('value');
+	// 	$timeslot=$this->b->get_timeslot($value);
+	// 	if(count($timeslot)>0)
+	// 	{
+	  
+	// 	  $pro_select_box='';
+	// 	  $pro_select_box.='<option value="">Select Timeslot</option>';
+	  
+	// 	  foreach ($timeslot as $time) {
+	// 		$pro_select_box.='<option value="'.$time->time_id.'">'.$time->slot_time.'</option>';
+			
+	// 	  }
+	// 	  echo json_encode($pro_select_box);
+	  
+	// 	}
+	 }
+
 }
 ?>

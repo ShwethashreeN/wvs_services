@@ -97,7 +97,7 @@ width:290px;
               <div class='col-md-3 services_display'>
                <div class='thumbnail'>
               <a href='serviceproviders/getcourses?course_id=$row->course_id'>
-                <img src='$row->course_image' alt='No image' style='width:100%;height:180px;'>
+                <img src='$row->course_image' alt='No image' class='serv_image' style='width:100%;height:180px;'>
               </a>
               <div class='caption'>
                   <p>$row->course_name .</p>

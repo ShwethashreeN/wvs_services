@@ -1,21 +1,4 @@
-<script>
-var $datePicker = $("div#datepicker");
 
-var $datePicker = $("div");
-
-$datePicker.datepicker({
-    changeMonth: true,
-    changeYear: true,
-    inline: true,
-    altField: "#datep",
- }).change(function(e){
-    setTimeout(function(){   
-       $datePicker
-         .find('.ui-datepicker-current-day').parent().after('<tr><td colspan="8"><div><button>8:00 am – 9:00 am</button></div><button>9:00 am – 10:00 am</button></div><button>10:00 am – 11:00 am</button></div></td></tr>')
-         
-    });
-});
-</script>
 
 
 <style>
@@ -55,11 +38,11 @@ img:hover{
               <div class='col-md-3' style='padding:40px;box-shadow:0px 5px 10px 0px #888888;margin-right:40px;'>
                  <img src='../assets/images/img_avatar.png' alt='no image' style='width:150px;margin-left:20px;'>
                   <h3>$row->sp_name .</h3>
-                  <p>$row->sp_desc .</p>
-                  <p>$row->sp_address .</p>
+                 
                   <p>$row->sp_email .</p>
                   <p>$row->sp_phone .</p><br>
-                  <a href='serviceprovider_details?sp_id=$row->sp_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
+                  <p><b>Ratings </b>: <span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star-empty'></span><span class='glyphicon glyphicon-star-empty'></span> </p>
+                  <a href='serviceprovider_details?sp_id=$row->sp_id'><button type='button' class='btn btn-default' >Check Availability</button></a><br>
               </div>";
 
 
@@ -69,10 +52,6 @@ img:hover{
       
 
   </div>
-  <input type="text" id="datep" />
-<div id="datepicker">
   
-  
-</div>
 </div><br><br><br><br><br><br>
 
