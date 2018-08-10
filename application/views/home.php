@@ -70,13 +70,13 @@ width:290px;
               echo "
               <div class='col-md-3 services_display'>
                <div class='thumbnail'>
-              <a href='serviceproviders/getservices?service_id=$row->service_id'>
+              <a href='serviceproviders/getservices?service_name=meeting'>
                 <img src='$row->service_image' alt='No image' class='serv_image' style='height:180px;width:100%;'>
               </a>
               <div class='caption'>
                   <p>$row->service_name .</p>
                   <p>$row->service_desc .</p><br>
-                  <a href='serviceproviders/getservices?service_id=$row->service_id'><button type='button' class='btn btn-default' >Book Now</button></a><br>
+                  <a href='serviceproviders/getservices?service_name=meeting'><button type='button' class='btn btn-default' >Book Now</button></a><br>
               </div>
               </div>
               </div>";

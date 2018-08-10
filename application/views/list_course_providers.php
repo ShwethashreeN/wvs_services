@@ -4,10 +4,10 @@
     margin-top:100px;
     /* margin-bottom:150px; */
 }
-img{
-    border-radius:50%;
+#profile_image{
+  border-radius:50%;
 }
-img:hover{
+#profile_image:hover{
     border:10px solid #f1f1f1;
     /* box-shadow:0px 5px 10px 0px #888888; */
 }
@@ -22,7 +22,7 @@ img:hover{
                 
                 echo "
                 <div class='col-md-3' style='padding:40px;box-shadow:0px 5px 10px 0px #888888;margin-right:40px;'>
-                   <img src='../assets/images/img_avatar.png' alt='no image' style='width:150px;margin-left:20px;'>
+                   <img src='../assets/images/img_avatar.png' alt='no image' id='profile_image' style='width:150px;margin-left:20px;'>
                     <h3>$row->cp_name .</h3>
                     <p>$row->cp_email .</p>
                     <p>$row->cp_phone .</p>

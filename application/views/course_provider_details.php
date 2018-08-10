@@ -45,10 +45,10 @@ $datePicker.datepicker({
     color: #1a1a1a;
 }
 #addon{background-color:#999; width:100%}
-img{
-    border-radius:50%;
+#profile_image{
+  border-radius:50%;
 }
-img:hover{
+#profile_image:hover{
     border:10px solid #f1f1f1;
     /* box-shadow:0px 5px 10px 0px #888888; */
 }
@@ -82,7 +82,7 @@ img:hover{
               <form method='post'>
                <div class='col-md-7 services_display'>
                <div class='caption'>
-               <img src='../assets/images/img_avatar.png' alt='no image' style='width:150px;margin-left:20px;'><br><br>
+               <img src='../assets/images/img_avatar.png' alt='no image' id='profile_image' style='width:150px;margin-left:20px;'><br><br>
                         <p><b>About</b> : $row->cp_about.</p>
                         <p><b>Details</b> : $row->cp_desc.</p>
                         <p><b>Address</b> : $row->cp_address.</p>

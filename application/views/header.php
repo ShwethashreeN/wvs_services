@@ -99,7 +99,7 @@ h1,h2{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"><img src="assets/images/WVS-Logo.png" class="logo"></a>
+      <a class="navbar-brand" href="#"><img src="/wvs_services/assets/images/WVS-Logo.png" class="logo"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
@@ -113,9 +113,11 @@ h1,h2{
 
         <?php 
                $logindata = $this->session->userdata('user');
+               $login_id = $this->session->userdata('user1');
 
                   if(isset($logindata)){   
                        echo "<li>$logindata , <a href='http://localhost/wvs_services/index.php/customer/cust_logout'>logout</a></li>";
+                      
                     }
                 else {   
                     //  echo' <li><a href="http://localhost/wvs_services/index.php/customer/cust_register" >SIGNUP</a></li> ';   

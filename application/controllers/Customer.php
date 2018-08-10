@@ -47,12 +47,12 @@ class Customer extends CI_Controller {
 			$dataT = $this->c->loginValidate($email,$pwd);
 			 foreach($data as $key => $value){ 
 				$loginName= $value['customer_name'];
-				
+				$customer_id= $value['customer_id'];
 			   } 
 			if(($dataT)){
-			   $this->session->set_userdata(array('user'=>$loginName));  
+			   $this->session->set_userdata(array('user'=>$loginName,'user1'=>$customer_id));  
 
-				header('location:' . base_url() );
+				header('location:' . base_url() .'index.php/payment');
 				//redirect($_SERVER['HTTP_REFERER']);
 
 				//header('location:javascript://history.go(-1)');

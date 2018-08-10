@@ -14,10 +14,13 @@
     color: #1a1a1a;
 }
 #addon{background-color:#999; width:100%}
-img{
+/* img{
     border-radius:50%;
+} */
+#profile_image{
+  border-radius:50%;
 }
-img:hover{
+#profile_image:hover{
     border:10px solid #f1f1f1;
     /* box-shadow:0px 5px 10px 0px #888888; */
 }
@@ -35,6 +38,9 @@ img:hover{
 .services_display{
   border-right:2px solid brown;
 }
+#time_slots{
+  display:hidden;
+}
 </style>
 
 <div class="container">
@@ -51,12 +57,12 @@ img:hover{
               <form method='post'>
                <div class='col-md-7 services_display'>
                <div class='caption'>
-               <img src='../assets/images/img_avatar.png' alt='no image' style='width:150px;margin-left:20px;'><br><br>
-                        <p><b>Details</b> : $row->sp_details.</p>
-                        <p><b>About</b> : $row->sp_desc.</p>
-                        <p><b>Address</b> : $row->sp_address.</p>
-                        <p><b>Price/Cost </b>: $row->sp_cost .</p>
-                        <p><b>Ratings </b>: <span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star'></span><span class='glyphicon glyphicon-star-empty'></span><span class='glyphicon glyphicon-star-empty'></span> </p>
+               <img src=$row->service_avatar alt='no image' style='width:150px;margin-left:20px;' id='profile_image'><br><br>
+                        <p><b>Name</b> :    $row->service_name .</p>
+                        <p><b>About</b> :      $row->service_details .</p>
+                        <p><b>Address</b> :    $row->service_address .</p>
+                        <p><b>Price/Cost </b> : $row->service_sub_details .</p>
+                       
                         
                         <div class='form-group'>
                         <label class='control-label'>Date Slot:</label>
@@ -70,8 +76,18 @@ img:hover{
                              </select>
                           </div>
                          
-                         
-                         
+
+                         <div id='time_slots'>
+                          <h3>Select the time slot</h3>
+                      
+                              <div style='border:1px solid brown;border-radius:8px;margin-top:5px;width:12%;box shadow:5px 10px #dddddd;padding:5px;'>
+                                  <a style='line-height:10px;text-decoration:none;cursor:pointer;' >9:00 AM</a>
+                              </div>
+                              <div style='border:1px solid brown;border-radius:8px;margin-top:5px;width:12%;box shadow:5px 10px #dddddd;padding:5px;'>
+                                  <a style='line-height:10px;text-decoration:none;cursor:pointer;' >10:00 AM</a>
+                              </div>
+
+                         </div>
                          <br><br><br><br>
                         
                         
@@ -89,46 +105,9 @@ img:hover{
 
               echo" </div>
                </div>
-
-               
-               
                </form>";
 
-               echo "
-               <div class='col-md-4' style='margin-left:50px;'>
-               <div class='list-group'>
-               <a href='#' class='list-group-item active'>
-                 <h3 class='list-group-item-heading' style='text-align:center;'>Recommended For You</h3>
-               
-               </a>
-               <a href='#' class='list-group-item'>
-                 <h4 class='list-group-item-heading'>Second List Group Item Heading</h4>
-                 <p class='list-group-item-text'>List Group Item Text</p>
-               </a>
-               <a href='#' class='list-group-item'>
-                 <h4 class='list-group-item-heading'>Third List Group Item Heading</h4>
-                 <p class='list-group-item-text'>List Group Item Text</p>
-               </a>
-               <a href='#' class='list-group-item'>
-                 <h4 class='list-group-item-heading'>Second List Group Item Heading</h4>
-                 <p class='list-group-item-text'>List Group Item Text</p>
-               </a>
-               <a href='#' class='list-group-item'>
-                 <h4 class='list-group-item-heading'>Third List Group Item Heading</h4>
-                 <p class='list-group-item-text'>List Group Item Text</p>
-               </a>
-               <a href='#' class='list-group-item'>
-                 <h4 class='list-group-item-heading'>Second List Group Item Heading</h4>
-                 <p class='list-group-item-text'>List Group Item Text</p>
-               </a>
-               <a href='#' class='list-group-item'>
-                 <h4 class='list-group-item-heading'>Third List Group Item Heading</h4>
-                 <p class='list-group-item-text'>List Group Item Text</p>
-               </a>
-             </div>
-             </div>
-               ";
-               
+              
                
               }
            ?>
@@ -148,6 +127,7 @@ img:hover{
                 
             });
         </script>
+
 
 
 
@@ -198,21 +178,60 @@ img:hover{
 
 
 
-<script>
+<!-- <script>
+
           $(document).ready(function(){
               $("#date").change(function(){
                 var date = $('#date').val();
-                alert(date);
+                //alert(date);
                   $.ajax({
-                    url: "<?php echo base_url(); ?>index.php//Serviceproviders/get_timeslot",
+                    url: "<?php echo base_url(); ?>index.php/Serviceproviders/get_timeslot",
                     data :date,
                     //dataType: 'json',
                     type: "post",
                     success: function(data){
-                      alert(data);
+                     alert(date);
                     }
 
                   });
               });
+             
           });
-   </script>
+   </script> -->
+
+
+   <script type="text/javascript">
+ $(document).ready(function(){
+ 	$('#date').on('change',function(){
+
+ 		var value=$(this).val();
+ 		//alert(value);
+ 		if(value=='')
+ 		{
+ 			$('#timeslot).prop('disabled',true);
+ 		}
+ 		else{
+ 			$('#timeslot').prop('disabled',false);
+ 			$.ajax({
+ 					url:"<?php echo base_url() ?>Serviceproviders/get_timeslot",
+ 					type:"POST",
+ 					data:{'value':value},
+ 					dataType:'json',
+ 					success:function(data){
+ 						$('#timeslot').html(data);
+ 					},
+ 					error:function(){
+ 						alert('error');
+ 					}
+
+ 			});
+ 		}
+
+ 	});
+
+
+
+ });
+
+
+ </script>
