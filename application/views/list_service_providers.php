@@ -17,7 +17,7 @@
     /* margin-bottom:150px; */
 }
 #profile_image{
-  border-radius:50%;
+  border-radius:2%;
 }
 #profile_image:hover{
     border:10px solid #f1f1f1;
@@ -33,9 +33,9 @@
              {
                 
               echo "
-              <div class='col-md-3' style='padding:40px;box-shadow:0px 5px 10px 0px #888888;margin-right:40px;'>
-                 <img src=$row->service_avatar alt='no image' id= 'profile_image' style='width:150px;margin-left:20px;'>
-                  <h3>$row->service_name .</h3>
+              <div class='col-md-3' style='padding:20px;box-shadow:0px 5px 10px 0px #888888;margin-right:40px;'>
+                 <img src=$row->service_avatar alt='no image' id= 'profile_image' style='width:250px;margin-bottom:20px;'>
+                  <h4 class='text-center'>$row->service_name .</h4>
                  
                   <p>$row->service_address .</p>
                   <p>$row->service_sub_details .</p><br>
