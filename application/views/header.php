@@ -66,7 +66,7 @@ h1,h2{
   }
   .open .dropdown-toggle {
       color: #fff;
-      background-color: #555 !important;
+      background-color:transparent !important;
   }
  
   .btn-default{
@@ -86,6 +86,16 @@ h1,h2{
   .logo{
     margin-top:-44px;
   }
+  .dropdown-menu{
+      width:180px !important;
+      background-color:silver;
+      
+      border-radius:none;
+  }
+  .dropdown-menu li a{
+    color:black !important;
+   padding:8px 20px !important;
+  }
   </style>
 
 </head>
@@ -104,7 +114,8 @@ h1,h2{
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right" style="padding-right:20px;">
          <li><a href="<?php echo base_url(); ?>" >HOME</a></li> 
-         <li><a href="<?php echo base_url(); ?>" >CONTACT</a></li> 
+         <li><a href="<?php echo base_url(); ?>contact" >CONTACT</a></li> 
+         
         
          <!-- <li><a href="<?php echo base_url(); ?>index.php/customer/cust_register" >SIGN UP</a></li> 
         <li style="margin-left:-20px;margin-right:5px;"><a href="<?php echo base_url(); ?>index.php/customer/cust_login" >LOGIN</a></li>
@@ -116,8 +127,16 @@ h1,h2{
                $login_id = $this->session->userdata('user1');
 
                   if(isset($logindata)){   
-                       echo "<li>$logindata , <a href='http://localhost/wvs_services/index.php/customer/cust_logout'>logout</a></li>";
+                   echo" <li class='dropdown'>
+                    <a class='dropdown-toggle' data-toggle='dropdown' href='#'> Welcome $logindata
+                    <span class='caret'></span></a>
+                    <ul class='dropdown-menu'>
+                      <li style='border-bottom:1px solid;'><a href='http://localhost/wvs_services/index.php/customer/cust_logout'>LOGOUT</a></li>
+                      <li><a href='#'>PROFILE</a></li>
                       
+                    </ul>
+                  </li>";
+                    
                     }
                 else {   
                     //  echo' <li><a href="http://localhost/wvs_services/index.php/customer/cust_register" >SIGNUP</a></li> ';   

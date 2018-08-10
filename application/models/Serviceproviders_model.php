@@ -38,6 +38,16 @@ class Serviceproviders_model extends CI_Model {
 
         }
 
+        function getSlotDetails($service_id,$selectedDate){
+            $queryValidateDate = $this->db->query("select st.time_id,st.slot_time 
+            from wvs_service_slot_time_details st 
+            JOIN wvs_service_slot_date_details sd 
+            ON sd.slot_id=st.slot_id where sd.service_id='" . $service_id ."'
+             and sd.slot_date='" . $selectedDate ."'");
+    
+             return $queryValidateDate->result();
+        }
+
         // function list_course_providers($course_id)  
         // {  
         //     // $query = $this->db->get('wvs_service_providers');  

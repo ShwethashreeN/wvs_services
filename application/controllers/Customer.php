@@ -52,7 +52,7 @@ class Customer extends CI_Controller {
 			if(($dataT)){
 			   $this->session->set_userdata(array('user'=>$loginName,'user1'=>$customer_id));  
 
-				header('location:' . base_url() .'index.php/payment');
+				header('location:' . base_url());
 				//redirect($_SERVER['HTTP_REFERER']);
 
 				//header('location:javascript://history.go(-1)');

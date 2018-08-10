@@ -52,7 +52,6 @@
              foreach($data as $row)  
              {
                 
-              
               echo "
               <form method='post'>
                <div class='col-md-7 services_display'>
@@ -69,29 +68,26 @@
                            <input type='text' id='date' class='input datepicker' placeholder='yyyy-mm-dd' name='expected_date'/>
                          </div>
                          
-                         <div class='form-group'>
-                         <label class='control-label'>Time Slot:</label>
-                             <select  name='timeslot' id='timeslot' disabled >
-                             <option  value=''>--Choose Timeslot--</option>
-                             </select>
-                          </div>
-                         
-
-                         <div id='time_slots'>
-                          <h3>Select the time slot</h3>
-                      
-                              <div style='border:1px solid brown;border-radius:8px;margin-top:5px;width:12%;box shadow:5px 10px #dddddd;padding:5px;'>
-                                  <a style='line-height:10px;text-decoration:none;cursor:pointer;' >9:00 AM</a>
-                              </div>
-                              <div style='border:1px solid brown;border-radius:8px;margin-top:5px;width:12%;box shadow:5px 10px #dddddd;padding:5px;'>
-                                  <a style='line-height:10px;text-decoration:none;cursor:pointer;' >10:00 AM</a>
-                              </div>
-
-                         </div>
-                         <br><br><br><br>
-                        
-                        
                         ";
+                         
+                        echo " <h3>Select the time slot</h3>";
+                         foreach($slots as $key){ 
+                            //  echo "slots"; $key->time_id;
+                        
+                            echo"  <div id='time_slots'>                        
+                                <div style='border:1px solid brown;border-radius:8px;margin-top:5px;width:12%;box shadow:5px 10px #dddddd;padding:5px;'>
+                                    <a style='line-height:10px;text-decoration:none;cursor:pointer;' >$key->slot_time</a>
+                                </div>
+  
+                           </div>
+                           <br><br><br><br>
+                          
+                          
+                          ";
+                        
+                        } 
+
+                    
                         
                         if(null !== ($this->session->userdata('user')))
                         {
@@ -117,22 +113,36 @@
   
 </div><br><br><br><br><br><br>
 
-   
-   <script type="text/javascript">
-            $(function() {
-                $("#date").datepicker({
-                    minDate : 0,
-                    dateFormat: 'yy-mm-dd'
-                });
-                
-            });
-        </script>
 
 
 
 
+ <script type="text/javascript">
+          $(function () {
+              $("#date").datepicker({
+                  minDate: 0,
+                  maxDate: "+60D",
+                  dateFormat: 'yy-mm-dd',
+            //      onSelect: function (selected) {
+            //          var dt = new Date(selected);
+            //         //   alert(dt);
+            //           $.ajax({
+ 			// 		url:"http://localhost/wvs_services/Serviceproviders/get_timeslot",
+ 			// 		type:"POST",
+ 			// 		data:{'value':'hifrom'},
+ 			// 		//dataType:'json',
+ 			// 		success:function(data){
+            //             alert(data);
+ 			// 		},
+ 			// 		error:function(error){
+ 			// 			alert(error);
+ 			// 		}
 
-
+ 			// });
+            //      }
+              });
+          });
+</script>
 
  <!-- <script type="text/javascript">
  $(document).ready(function(){
@@ -183,7 +193,7 @@
           $(document).ready(function(){
               $("#date").change(function(){
                 var date = $('#date').val();
-                //alert(date);
+                alert(date);
                   $.ajax({
                     url: "<?php echo base_url(); ?>index.php/Serviceproviders/get_timeslot",
                     data :date,
@@ -200,7 +210,7 @@
    </script> -->
 
 
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
  $(document).ready(function(){
  	$('#date').on('change',function(){
 
@@ -216,7 +226,7 @@
  					url:"<?php echo base_url() ?>Serviceproviders/get_timeslot",
  					type:"POST",
  					data:{'value':value},
- 					dataType:'json',
+ 					//dataType:'json',
  					success:function(data){
  						$('#timeslot').html(data);
  					},
@@ -234,4 +244,4 @@
  });
 
 
- </script>
+ </script> 

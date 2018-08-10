@@ -83,8 +83,11 @@ class Serviceproviders extends CI_Controller {
 		// }
 
 		//demo
+		$selectedDate = date("Y-m-d");
 		$service_id=$this->input->get('service_id');
-		$data['data']  = $this->b->serviceprovider_details($service_id);
+		// $data['data']  = $this->b->serviceprovider_details($service_id);
+		$data = array('data' => $this->b->serviceprovider_details($service_id),
+        'slots' => $this->b->getSlotDetails($service_id,$selectedDate));
 		$dataD  = $this->b->serviceprovider_details($service_id);
 		if($dataD){
 		$this->load->view('header');
@@ -114,42 +117,18 @@ class Serviceproviders extends CI_Controller {
 
 	public function get_timeslot(){
 		
-		//echo "<script>alert('hi')</script>";
-		//$value=$this->input->post('date');
-		echo "<script>alert(date);</script>";
-	// 	$value=$this->input->post('value');
-	// 	$timeslot=$this->b->get_timeslot($value);
-	// 	if(count($timeslot)>0)
-	// 	{
-	  
-	// 	  $pro_select_box='';
-	// 	  $pro_select_box.='<option value="">Select Timeslot</option>';
-	  
-	// 	  foreach ($timeslot as $time) {
-	// 		$pro_select_box.='<option value="'.$time->time_id.'">'.$time->slot_time.'</option>';
-			
-	// 	  }
-	// 	  echo json_encode($pro_select_box);
-	  
-	// 	}
-
-	//demo
-
-	$value=$this->input->post('value');
-	$time_id=$this->b->get_timeslot_new($value);
-	if(count($time_id)>0)
-	{
-  
-	  $pro_select_box='';
-	  $pro_select_box.='<option value="">Select time</option>';
-  
-	  foreach ($time_id as $seller) {
-		$pro_select_box.='<option value="'.$seller->slot_id.'">'.$seller->service_id.'</option>';
+		$service_id="1";
+		$selectedDate="2018-08-10";
+		$data = array('data' => $this->b->serviceprovider_details($service_id),
+        'slots' => $this->b->getSlotDetails($service_id,$selectedDate));
+		// echo "<script>alert(JSON.Stringify($data))</script>";
+		alert("SUCCESS".JSON.Stringify($data));
+		// echo JSON.Stringify($data);
+		// $data;
 		
-	  }
-	  echo json_encode($pro_select_box);
-  
-	}
+	
+
+	
 	 }
 
 }
