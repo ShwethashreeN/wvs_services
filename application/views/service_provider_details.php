@@ -41,6 +41,12 @@
 #time_slots{
   display:hidden;
 }
+input{
+  border:none;
+}
+textarea{
+  border:none;
+}
 </style>
 
 <div class="container">
@@ -56,16 +62,18 @@
               <form method='post'>
                <div class='col-md-7 services_display'>
                <div class='caption'>
-               <img src=$row->service_avatar alt='no image' style='width:150px;margin-left:20px;' id='profile_image'><br><br>
-                        <p><b>Name</b> :    $row->service_name .</p>
-                        <p><b>About</b> :      $row->service_details .</p>
-                        <p><b>Address</b> :    $row->service_address .</p>
-                        <p><b>Price/Cost </b> : $row->service_sub_details .</p>
+               <img src=$row->service_avatar alt='no image' style='width:150px;margin-left:20px;' id='profile_image'>
+               <input name='image'  type='text' readonly  />
+               <br><br>
+                        <p><b>Name</b> :  <input type='text' name='name' value='$row->service_name' readonly> </p>
+                        <p><b>About</b> :   <textarea rows='4' cols='50' name='details'  value='$row->service_details ' readonly> $row->service_details</textarea> .</p>
+                        <p><b>Address</b> :    <textarea rows='4' cols='50'  value=' $row->service_address' readonly> $row->service_address</textarea> </p>
+                        <p><b>Price/Cost </b> : <input type='text' name='cost'  value='$row->service_sub_details' readonly> </p>
                        
                         
                         <div class='form-group'>
                         <label class='control-label'>Date Slot:</label>
-                           <input type='text' id='date' class='input datepicker' placeholder='yyyy-mm-dd' name='expected_date'/>
+                           <input type='text' id='date' class='input datepicker' placeholder='yyyy-mm-dd' name='selected_date'/>
                          </div>
                          
                         ";
@@ -91,7 +99,7 @@
                         
                         if(null !== ($this->session->userdata('user')))
                         {
-                        echo "<a href='../payment/index' style='float:right;color:#51627C;'><button type='button' class='btn btn-default' >Confirm Booking</button></a><br>";
+                        echo "<a href='../order_summary/index' style='float:right;color:#51627C;'><button type='button' class='btn btn-default' >Confirm Booking</button></a><br>";
                         }
                        
                         else{
